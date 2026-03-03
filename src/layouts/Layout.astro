@@ -7,12 +7,15 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  keywords?: string;
 }
 
 const {
   title = "POS Percetakan",
-  description = "POS Percetakan membantu bisnis percetakan mengelola order, produksi, dan laporan penjualan dalam satu platform."
+  description = "POS Percetakan atau Aplikasi Percetakan Digital membantu bisnis percetakan mengelola order, produksi,manajemen Stok, dan laporan penjualan dalam satu platform.",
 } = Astro.props;
+
+const keywords = "POS Percetakan, Aplikasi Percetakan, Kasir Percetakan, Percetakan Digital, ERP Percetakan";
 ---
 
 <!doctype html>
@@ -20,6 +23,7 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate icon" href="/favicon.ico" />
@@ -51,7 +55,7 @@ const {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
-    <meta property="og:image" content="https://pospercetakan.id/og-image.jpg" />
+    <meta property="og:image" content="https://pospercetakan..com/og-image.jpg" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -59,6 +63,8 @@ const {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="https://pospercetakan.com/twitter-image.jpg" />
+
+    <!-- SEO Section -->
   </head>
   <body class="min-h-screen flex flex-col">
     <a href="#main-content" class="skip-link">Skip to main content</a>
