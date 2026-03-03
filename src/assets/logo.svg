@@ -1,0 +1,23 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simple, clean logo -->
+  <g id="logo">
+    <!-- Circle with gradient -->
+    <circle cx="20" cy="20" r="18" fill="url(#logoGradient)" />
+    
+    <!-- Clean 'P' path -->
+    <path d="M13,32 L13,8 L20,8 C25,8 27,12 27,16 C27,20 25,24 20,24 L13,24"
+      stroke="white" 
+      stroke-width="3" 
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none" />
+  </g>
+
+  <!-- Simple gradient -->
+  <defs>
+    <linearGradient id="logoGradient" x1="2" y1="2" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7928CA" />
+      <stop offset="100%" stop-color="#0070F3" />
+    </linearGradient>
+  </defs>
+</svg>

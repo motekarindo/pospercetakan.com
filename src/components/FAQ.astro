@@ -1,0 +1,80 @@
+---
+const faqs = [
+  {
+    question: 'Berapa lama implementasi POS Percetakan?',
+    answer: 'Rata-rata implementasi awal membutuhkan 3-7 hari kerja, tergantung kompleksitas produk dan alur operasional bisnis Anda.'
+  },
+  {
+    question: 'Apakah bisa dipakai untuk lebih dari satu outlet?',
+    answer: 'Bisa. Anda dapat mengelola beberapa outlet dalam satu akun dengan laporan terpisah maupun gabungan.'
+  },
+  {
+    question: 'Apakah sistem mendukung pembayaran DP dan pelunasan?',
+    answer: 'Ya. POS Percetakan mendukung skema pembayaran bertahap, termasuk DP, pelunasan, dan catatan jatuh tempo.'
+  },
+  {
+    question: 'Bisakah saya menyesuaikan daftar produk dan harga?',
+    answer: 'Tentu. Anda bisa membuat kategori produk, variasi bahan, ukuran, finishing, serta aturan harga sesuai kebutuhan.'
+  },
+  {
+    question: 'Bagaimana keamanan data bisnis saya?',
+    answer: 'Data disimpan dengan praktik keamanan standar industri, termasuk kontrol akses pengguna dan backup berkala.'
+  },
+  {
+    question: 'Apakah tersedia bantuan onboarding?',
+    answer: 'Ya. Tim kami membantu onboarding awal, konfigurasi dasar, dan pelatihan singkat agar tim Anda cepat produktif.'
+  }
+];
+---
+
+<section class="py-20 bg-payflo-gray relative overflow-hidden">
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0 bg-repeat" style="background-image: url('/grid-pattern.svg');"></div>
+  </div>
+
+  <div class="container-custom relative">
+    <div class="text-center max-w-3xl mx-auto animate-on-scroll">
+      <h2 class="text-3xl md:text-4xl font-bold">
+        Pertanyaan yang Sering Diajukan
+      </h2>
+      <p class="mt-4 text-xl text-gray-600">
+        Hal-hal penting yang biasanya ditanyakan sebelum mulai menggunakan POS Percetakan.
+      </p>
+    </div>
+
+    <div class="mt-12 max-w-3xl mx-auto">
+      {faqs.map((faq, index) => (
+        <div
+          class="mb-6 bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden animate-on-scroll faq-item hover:shadow-md transition-all duration-300"
+          style={`animation-delay: ${index * 0.1}s`}
+        >
+          <details class="group">
+            <summary class="flex justify-between items-center cursor-pointer p-6 transition-all duration-300 hover:bg-gray-50">
+              <h3 class="text-lg font-medium transition-colors duration-300 group-hover:text-payflo-purple">{faq.question}</h3>
+              <div class="flex-shrink-0 ml-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 group-open:rotate-180 transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 faq-content">
+              <p>{faq.answer}</p>
+            </div>
+          </details>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center animate-on-scroll">
+      <p class="text-gray-600">
+        Masih ada pertanyaan? Tim kami siap membantu.
+      </p>
+      <a href="/contact" class="mt-4 inline-flex items-center text-payflo-purple font-medium hover:underline group">
+        Hubungi Kami
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

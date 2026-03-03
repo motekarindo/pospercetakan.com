@@ -1,0 +1,81 @@
+---
+import { Image } from 'astro:assets';
+import heroImage from '../assets/pospercetakan_hero.png';
+
+const whatsappHref =
+  'https://wa.me/6281212656699?text=Halo%20pospercetakan.com%20saya%20ingin%20demo%2Fkonsultasi%20terkait%20aplikasi%20POS%20percetakan';
+---
+
+<section class="pt-20 pb-16 md:pt-28 md:pb-24 overflow-hidden relative">
+  <div class="absolute inset-0 opacity-5 parallax" data-speed="0.2">
+    <div class="absolute inset-0 bg-repeat" style="background-image: url('/grid-pattern.svg');"></div>
+  </div>
+
+  <div class="container-custom relative">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h1 class="animate-on-scroll delay-0 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+          Kelola <span class="gradient-text">Operasional Percetakan</span> Lebih Cepat
+        </h1>
+        <p class="animate-on-scroll delay-1 mt-6 text-xl text-gray-600 max-w-lg">
+          Satu dashboard untuk Point of Sales (POS), input order, kalkulasi harga, antrian produksi, dan laporan penjualan percetakan Anda.
+        </p>
+        <div class="animate-on-scroll delay-2 mt-8 flex flex-col sm:flex-row gap-4">
+          <a href={whatsappHref} class="btn btn-primary group whitespace-nowrap text-sm md:text-base sm:min-w-[220px]">
+            <span class="inline-flex items-center justify-center gap-2 w-full">
+              Free Trial 14 Hari
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </span>
+          </a>
+          <a href={whatsappHref} class="btn btn-secondary whitespace-nowrap text-sm md:text-base sm:min-w-[220px]">
+            <span class="inline-flex items-center justify-center gap-2 w-full">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.04 2C6.5 2 2 6.48 2 12c0 1.95.56 3.83 1.62 5.45L2 22l4.7-1.57A10.02 10.02 0 0 0 12.04 22C17.56 22 22 17.52 22 12S17.56 2 12.04 2Zm0 18.17c-1.6 0-3.16-.43-4.52-1.26l-.33-.2-2.79.93.91-2.72-.22-.35a8.12 8.12 0 0 1-1.24-4.34c0-4.48 3.67-8.12 8.19-8.12 2.18 0 4.23.84 5.77 2.36A8.07 8.07 0 0 1 20.2 12c0 4.48-3.65 8.17-8.16 8.17Zm4.47-6.08c-.25-.13-1.46-.72-1.68-.81-.23-.08-.39-.12-.56.12-.17.24-.64.8-.79.96-.15.17-.29.19-.54.06-.25-.13-1.03-.38-1.95-1.2-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.02-.37.1-.5.1-.1.25-.26.37-.39.12-.13.16-.23.25-.39.08-.17.04-.3-.02-.43-.06-.13-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.65.3-.22.24-.85.84-.85 2.04s.87 2.37 1 2.53c.12.17 1.7 2.59 4.12 3.63.58.25 1.03.4 1.38.51.58.18 1.1.15 1.52.09.46-.07 1.46-.6 1.67-1.17.21-.57.21-1.05.15-1.15-.06-.1-.23-.16-.48-.29Z"/>
+              </svg>
+              Konsultasi Gratis
+            </span>
+          </a>
+        </div>
+        <div class="animate-on-scroll delay-3 mt-8 flex items-center space-x-4">
+          <!-- <div class="flex -space-x-2" role="img" aria-label="Customer testimonial avatars">
+            <img
+              src="/testimonial-avatar-1.jpg"
+              alt="Owner Percetakan A"
+              class="w-10 h-10 rounded-full border-2 border-white transition-transform duration-300 hover:scale-110 hover:z-10"
+            />
+            <img
+              src="/testimonial-avatar-2.jpg"
+              alt="Owner Percetakan B"
+              class="w-10 h-10 rounded-full border-2 border-white transition-transform duration-300 hover:scale-110 hover:z-10"
+            />
+            <img
+              src="/testimonial-avatar-3.jpg"
+              alt="Owner Percetakan C"
+              class="w-10 h-10 rounded-full border-2 border-white transition-transform duration-300 hover:scale-110 hover:z-10"
+            />
+          </div> -->
+          <div class="text-sm text-gray-600">
+            Dipakai oleh berbagai bisnis percetakan modern
+          </div>
+        </div>
+      </div>
+
+      <div class="animate-on-scroll delay-4">
+        <div class="relative hover-zoom">
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-payflo-purple to-payflo-blue rounded-xl blur opacity-30 transition-opacity duration-300 hover:opacity-50"></div>
+          <div class="relative bg-white rounded-xl shadow-xl overflow-hidden">
+            <Image
+              src={heroImage}
+              alt="Dashboard POS Percetakan"
+              class="w-full h-auto transition-all duration-500"
+              width={700}
+              height={500}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

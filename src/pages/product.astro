@@ -1,0 +1,109 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import productImage from '../assets/product-dashboard.png';
+import { Icon } from 'astro-icon/components';
+import CTASection from '../components/CTASection.astro';
+
+const features = [
+  {
+    title: "Fully Embedded Experience",
+    description: "Seamlessly integrate payroll into your existing platform with our APIs and UI components.",
+    icon: "ph:layout-duotone"
+  },
+  {
+    title: "Tax Filing & Compliance",
+    description: "We handle all tax calculations, filings, and payments so you don't have to worry about compliance.",
+    icon: "ph:check-square-duotone"
+  },
+  {
+    title: "Flexible Payment Options",
+    description: "Support for direct deposit, checks, and other payment methods to suit your customers' needs.",
+    icon: "ph:credit-card-duotone"
+  },
+  {
+    title: "White-Label Solution",
+    description: "Customize the entire experience to match your brand, making it feel like a native part of your platform.",
+    icon: "ph:paint-brush-duotone"
+  },
+  {
+    title: "Detailed Reporting",
+    description: "Provide comprehensive payroll reports and analytics for your customers.",
+    icon: "ph:chart-line-duotone"
+  },
+  {
+    title: "Developer-Friendly APIs",
+    description: "Well-documented RESTful APIs that make integration straightforward for your development team.",
+    icon: "ph:code-duotone"
+  }
+];
+---
+
+<Layout 
+  title="POS Percetakan - Product" 
+  description="POS Percetakan's payroll API is easy to use and fast to launch, with compliant infrastructure and features customers will love."
+>
+  <section class="pt-20 pb-16 md:pt-28 md:pb-24">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="animate-on-scroll">
+          <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+            A <span class="gradient-text">Modern Approach</span> to Payroll Infrastructure
+          </h1>
+          <p class="mt-6 text-xl text-gray-600 max-w-lg">
+            POS Percetakan's payroll API is easy to use and fast to launch, with compliant infrastructure and features customers will love.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-4">
+            <a href="/book-demo" class="btn btn-primary">Book a Demo</a>
+            <a href="/documentation" class="btn btn-secondary">View API Docs</a>
+          </div>
+        </div>
+        
+        <div class="animate-on-scroll" style="animation-delay: 0.2s;">
+          <div class="relative">
+            <div class="absolute -inset-0.5 bg-gradient-to-r from-payflo-purple to-payflo-blue rounded-xl blur opacity-30"></div>
+            <div class="relative bg-white rounded-xl shadow-xl overflow-hidden">
+              <Image 
+                src={productImage} 
+                alt="POS Percetakan Product Dashboard" 
+                class="w-full h-auto"
+                width={700}
+                height={500}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-20 bg-payflo-gray">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto animate-on-scroll">
+        <h2 class="text-3xl md:text-4xl font-bold">
+          Key Features
+        </h2>
+        <p class="mt-4 text-xl text-gray-600">
+          Everything you need to offer a complete payroll solution to your customers.
+        </p>
+      </div>
+      
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {features.map((feature, index) => (
+          <div 
+            class="bg-white rounded-xl p-8 shadow-sm animate-on-scroll" 
+            style={`animation-delay: ${index * 0.1}s`}
+          >
+            <div class="h-12 w-12 rounded-lg bg-gradient-to-r from-payflo-purple to-payflo-blue flex items-center justify-center text-white mb-6">
+              <Icon name={feature.icon} class="h-6 w-6" />
+            </div>
+            <h3 class="text-xl font-semibold">{feature.title}</h3>
+            <p class="mt-3 text-gray-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <CTASection />
+</Layout>

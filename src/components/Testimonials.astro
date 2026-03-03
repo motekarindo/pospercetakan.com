@@ -1,0 +1,67 @@
+---
+const testimonials = [
+  {
+    quote: 'Sejak pakai POS Percetakan, proses order sampai invoice jadi jauh lebih rapi dan cepat. Tim produksi jadi lebih fokus.',
+    author: 'Rizky Pratama',
+    role: 'Owner CetakPrima',
+    avatar: '/testimonial-avatar-1.jpg'
+  },
+  {
+    quote: 'Sebelumnya kami pakai spreadsheet manual. Sekarang tracking order, pembayaran, dan laporan harian bisa dipantau real-time.',
+    author: 'Dina Maharani',
+    role: 'Operational Manager PrintHub',
+    avatar: '/testimonial-avatar-2.jpg'
+  },
+  {
+    quote: 'Dashboardnya membantu kami mengurangi salah cetak karena detail pesanan tersimpan jelas dari awal sampai selesai.',
+    author: 'Andi Saputra',
+    role: 'Supervisor Produksi FastPrint',
+    avatar: '/testimonial-avatar-3.jpg'
+  }
+];
+---
+
+<section class="py-20 bg-white relative overflow-hidden">
+  <div class="absolute inset-0 opacity-5 parallax" data-speed="0.15">
+    <div class="absolute inset-0 bg-repeat" style="background-image: url('/grid-pattern.svg');"></div>
+  </div>
+
+  <div class="container-custom relative">
+    <div class="text-center max-w-3xl mx-auto animate-on-scroll">
+      <h2 class="text-3xl md:text-4xl font-bold">
+        Dipercaya Pelaku Usaha Percetakan
+      </h2>
+      <p class="mt-4 text-xl text-gray-600">
+        Pengguna POS Percetakan merasakan operasional lebih tertata dan produktif.
+      </p>
+    </div>
+
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+      {testimonials.map((testimonial, index) => (
+        <div
+          class="testimonial-card animate-on-scroll group"
+          style={`animation-delay: ${index * 0.15}s`}
+        >
+          <div class="flex items-center mb-6">
+            <div class="relative mr-4 overflow-hidden rounded-full transition-all duration-300 group-hover:shadow-md">
+              <img
+                src={testimonial.avatar}
+                alt={testimonial.author}
+                class="w-12 h-12 rounded-full transition-transform duration-500 group-hover:scale-110"
+              />
+            </div>
+            <div>
+              <h4 class="font-semibold transition-colors duration-300 group-hover:text-payflo-purple">{testimonial.author}</h4>
+              <p class="text-sm text-gray-600">{testimonial.role}</p>
+            </div>
+          </div>
+          <p class="text-gray-700 italic relative">
+            <span class="absolute -top-2 -left-1 text-4xl text-payflo-purple opacity-20 transition-all duration-300 group-hover:opacity-40 group-hover:scale-110">"</span>
+            {testimonial.quote}
+            <span class="absolute -bottom-2 -right-1 text-4xl text-payflo-purple opacity-20 transition-all duration-300 group-hover:opacity-40 group-hover:scale-110">"</span>
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
