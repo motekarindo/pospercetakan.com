@@ -147,13 +147,34 @@ body {
 }
 
 /* ===== Header Scroll Effect ===== */
-header {
-  transition: all 0.3s ease;
+.site-header {
+  transition: padding-top 0.35s ease;
 }
 
-header.scrolled {
-  @apply shadow-md bg-white/95;
+.site-header .header-inner {
+  background-color: rgba(255, 255, 255, 0.88);
+  border: 1px solid transparent;
+  border-radius: 0;
   backdrop-filter: blur(8px);
+  width: 100%;
+  max-width: 100%;
+  transition: width 0.35s ease, max-width 0.35s ease, height 0.35s ease, border-radius 0.35s ease, background-color 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease, transform 0.35s ease;
+}
+
+.site-header.scrolled {
+  @apply pt-3;
+}
+
+.site-header.scrolled .header-inner {
+  width: min(calc(100% - 2rem), 80rem);
+  max-width: 80rem;
+  height: 68px;
+  border-radius: 1rem;
+  border-color: rgba(229, 231, 235, 0.9);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px) saturate(1.2);
+  box-shadow: 0 14px 30px -20px rgba(30, 41, 59, 0.35);
+  transform: translateY(-1px);
 }
 
 /* ===== Navigation Link Effects ===== */
