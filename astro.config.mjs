@@ -15,6 +15,7 @@ export default defineConfig({
       include: {
         ph: [
           "star-duotone",
+          "wallet-duotone",
           "lightning-duotone",
           "globe-duotone",
           "users-duotone",
@@ -45,7 +46,11 @@ export default defineConfig({
           "lock-key-duotone",
           "certificate-duotone",
           "lifebuoy-duotone",
-          "handshake-duotone"
+          "handshake-duotone",
+          "wallet-duotone",
+          "warehouse-duotone",
+          "money-duotone",
+          "money-wavy",
         ]
       }
     }),
