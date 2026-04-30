@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pospercetakan.com/sitemap-index.xml
+Sitemap: https://pospercetakan.com/sitemap.xml
