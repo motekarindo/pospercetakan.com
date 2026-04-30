@@ -5,7 +5,7 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://pospercetakan.id',
+  site: 'https://pospercetakan.com',
   output: 'static',
   prefetch: true,
   integrations: [
