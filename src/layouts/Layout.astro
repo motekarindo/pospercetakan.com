@@ -16,15 +16,43 @@ const {
 } = Astro.props;
 
 const keywords = "POS Percetakan, Aplikasi Percetakan, Kasir Percetakan, Percetakan Digital, ERP Percetakan";
+const siteUrl = "https://pospercetakan.com";
+const currentUrl = Astro.url?.href ?? siteUrl;
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "POS Percetakan",
+    url: siteUrl,
+    logo: `${siteUrl}/favicon.ico`,
+    sameAs: ["https://www.linkedin.com/in/wildanisme"]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "POS Percetakan",
+    url: siteUrl,
+    inLanguage: "id-ID"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    url: currentUrl,
+    description
+  }
+];
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="canonical" href={currentUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
@@ -36,26 +64,14 @@ const keywords = "POS Percetakan, Aplikasi Percetakan, Kasir Percetakan, Perceta
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- Structured data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "POS Percetakan",
-        "url": "https://pospercetakan.com",
-        "logo": "https://pospercetakan.com/logo.png",
-        "sameAs": [
-          // "https://twitter.com/pospercetakan",
-          "https://www.linkedin.com/in/wildanisme"
-        ]
-      }
-    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
-    <meta property="og:image" content="https://pospercetakan..com/og-image.jpg" />
+    <meta property="og:url" content={currentUrl} />
+    <meta property="og:image" content="https://pospercetakan.com/og-image.jpg" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
