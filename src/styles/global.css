@@ -238,35 +238,6 @@ nav a:focus::after {
   transition: width 0.1s ease;
 }
 
-/* ===== FAQ Accordion Animations ===== */
-.faq-item {
-  overflow: hidden;
-}
-
-.faq-item summary {
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.faq-item summary::-webkit-details-marker {
-  display: none;
-}
-
-.faq-content {
-  max-height: 0;
-  opacity: 0;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.faq-content.faq-open {
-  max-height: 500px;
-  opacity: 1;
-}
-
-.faq-summary-open {
-  @apply text-payflo-purple;
-}
-
 /* ===== Mobile Menu Animations ===== */
 #mobile-menu {
   max-height: 0;

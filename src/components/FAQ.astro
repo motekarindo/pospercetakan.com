@@ -1,8 +1,12 @@
 ---
 const faqs = [
   {
+    question: 'Apakah POS Percetakan cocok untuk semua jenis percetakan?',
+    answer: 'POS Percetakan cocok untuk berbagai jenis usaha percetakan. Seperti Percetakan digital, Outdoor, Indoor, Merchandise dan sebagainya.'
+  },
+  {
     question: 'Berapa lama implementasi POS Percetakan?',
-    answer: 'Rata-rata implementasi awal membutuhkan 3-7 hari kerja, tergantung kompleksitas produk dan alur operasional bisnis Anda.'
+    answer: 'implementasi awal membutuhkan 1 kerja untuk aplikasi bisa digunakan oleh pengguna.'
   },
   {
     question: 'Apakah bisa dipakai untuk lebih dari satu outlet?',
@@ -45,22 +49,38 @@ const faqs = [
     <div class="mt-12 max-w-3xl mx-auto">
       {faqs.map((faq, index) => (
         <div
-          class="mb-6 bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden animate-on-scroll faq-item hover:shadow-md transition-all duration-300"
+          class="faq-item group relative mb-4 overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:shadow-md animate-on-scroll"
           style={`animation-delay: ${index * 0.1}s`}
+          data-state="closed"
         >
-          <details class="group">
-            <summary class="flex justify-between items-center cursor-pointer p-6 transition-all duration-300 hover:bg-gray-50">
-              <h3 class="text-lg font-medium transition-colors duration-300 group-hover:text-payflo-purple">{faq.question}</h3>
-              <div class="flex-shrink-0 ml-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 group-open:rotate-180 transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </div>
-            </summary>
-            <div class="px-6 pb-6 text-gray-600 faq-content">
+          <button
+            type="button"
+            class="faq-trigger flex w-full cursor-pointer items-center justify-between px-5 py-4 text-left transition-all duration-300 hover:bg-gray-50/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-payflo-purple data-[state=open]:text-payflo-purple md:px-6 md:py-5"
+            aria-expanded="false"
+            aria-controls={`faq-answer-${index}`}
+            id={`faq-question-${index}`}
+            data-state="closed"
+          >
+            <span class="text-base font-medium leading-7 transition-colors duration-300 group-hover:text-payflo-purple md:text-lg">{faq.question}</span>
+            <div class="ml-2 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="faq-icon h-5 w-5 text-gray-500 transition-transform duration-300 data-[state=open]:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" data-state="closed">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </button>
+          <div
+            id={`faq-answer-${index}`}
+            class="faq-content grid grid-rows-[0fr] opacity-0 transition-[grid-template-rows,opacity] duration-300 ease-in-out data-[state=open]:grid-rows-[1fr] data-[state=open]:opacity-100"
+            role="region"
+            aria-labelledby={`faq-question-${index}`}
+            aria-hidden="true"
+            data-state="closed"
+          >
+            <div class="min-h-0 overflow-hidden px-5 pb-0 text-gray-600 transition-[padding] duration-300 data-[state=open]:pb-5 md:px-6 md:data-[state=open]:pb-6" data-state="closed">
               <p>{faq.answer}</p>
             </div>
-          </details>
+          </div>
+          <div class="pointer-events-none absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-payflo-purple transition-transform duration-300 group-data-[state=open]:scale-x-100"></div>
         </div>
       ))}
     </div>
@@ -78,3 +98,34 @@ const faqs = [
     </div> -->
   </div>
 </section>
+
+<script>
+  const setupFaqAccordion = () => {
+    document.querySelectorAll<HTMLElement>('.faq-item').forEach((item) => {
+      const trigger = item.querySelector<HTMLButtonElement>('.faq-trigger');
+      const content = item.querySelector<HTMLElement>('.faq-content');
+      const contentInner = content?.querySelector<HTMLElement>('[data-state]');
+      const icon = item.querySelector<SVGElement>('.faq-icon');
+
+      if (!trigger || !content || trigger.dataset.faqBound === 'true') return;
+
+      trigger.dataset.faqBound = 'true';
+
+      trigger.addEventListener('click', () => {
+        const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+        const nextState = isOpen ? 'closed' : 'open';
+
+        trigger.setAttribute('aria-expanded', String(!isOpen));
+        content.setAttribute('aria-hidden', String(isOpen));
+        item.dataset.state = nextState;
+        trigger.dataset.state = nextState;
+        content.dataset.state = nextState;
+        if (contentInner) contentInner.dataset.state = nextState;
+        if (icon) icon.dataset.state = nextState;
+      });
+    });
+  };
+
+  document.addEventListener('astro:page-load', setupFaqAccordion);
+  setupFaqAccordion();
+</script>
