@@ -13,6 +13,16 @@ const resourceLinks = [
   { name: 'Studi Kasus', href: '/case-studies' },
 ];
 
+const localSeoLinks = [
+  { name: 'Semua Area Layanan', href: '/area-layanan' },
+  { name: 'Kota Bogor', href: '/aplikasi-percetakan-di-kota-bogor' },
+  { name: 'Kabupaten Bogor', href: '/aplikasi-percetakan-di-kabupaten-bogor' },
+  { name: 'Kota Jakarta Selatan', href: '/aplikasi-percetakan-di-kota-jakarta-selatan' },
+  { name: 'Kota Bandung', href: '/aplikasi-percetakan-di-kota-bandung' },
+  { name: 'POS Percetakan Bogor', href: '/pos-percetakan-di-kota-bogor' },
+  { name: 'POS Percetakan Bandung', href: '/pos-percetakan-di-kota-bandung' },
+];
+
 const legalLinks = [
   { name: 'Kebijakan Privasi', href: '/privacy-policy' },
   { name: 'Syarat Penggunaan', href: '/terms-of-use' },
@@ -104,22 +114,20 @@ const socialLinks = [
       </div>
 
       <div>
-        <h3 class="text-lg font-semibold mb-4 text-white/90 hover:text-white transition-colors duration-300">Resource</h3>
-        <!-- <ul class="space-y-3">
-          {resourceLinks.map((link, index) => (
+        <h3 class="text-lg font-semibold mb-4 text-white/90 hover:text-white transition-colors duration-300">Area Layanan</h3>
+        <ul class="space-y-3">
+          {localSeoLinks.map((link, index) => (
             <li class="transform transition-all duration-300 hover:translate-x-1">
               <a
                 href={link.href}
                 class="text-gray-400 hover:text-white transition-colors duration-300 inline-block"
-                target={link.href.startsWith('http') ? '_blank' : undefined}
-                rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 style={`transition-delay: ${index * 50}ms;`}
               >
                 {link.name}
               </a>
             </li>
           ))}
-        </ul> -->
+        </ul>
       </div>
 
       <div>

@@ -8,16 +8,19 @@ interface Props {
   title: string;
   description?: string;
   keywords?: string;
+  schema?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
 const {
   title = "POS Percetakan",
   description = "POS Percetakan atau Aplikasi Percetakan Digital membantu bisnis percetakan mengelola order, produksi,manajemen Stok, dan laporan penjualan dalam satu platform.",
+  keywords = "POS Percetakan, Aplikasi Percetakan, Kasir Percetakan, Percetakan Digital, ERP Percetakan",
+  schema = [],
 } = Astro.props;
 
-const keywords = "POS Percetakan, Aplikasi Percetakan, Kasir Percetakan, Percetakan Digital, ERP Percetakan";
 const siteUrl = "https://pospercetakan.com";
 const currentUrl = Astro.url?.href ?? siteUrl;
+const customSchema = Array.isArray(schema) ? schema : [schema];
 
 const structuredData = [
   {
@@ -41,7 +44,8 @@ const structuredData = [
     name: title,
     url: currentUrl,
     description
-  }
+  },
+  ...customSchema
 ];
 ---
 
