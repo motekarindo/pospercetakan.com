@@ -1,0 +1,55 @@
+---
+const timeline = [
+  {
+    year: "2018",
+    title: "The Idea",
+    description: "Juan builds and sells his first payroll engine to Intuit, sparking the idea for a better solution."
+  },
+  {
+    year: "2020",
+    title: "Team Assembly",
+    description: "Key team members from Intuit, Gusto, and Xero join forces to reimagine payroll infrastructure."
+  },
+  {
+    year: "2021",
+    title: "POS Percetakan Launch",
+    description: "First version of POS Percetakan's API launches, allowing platforms to embed payroll capabilities."
+  },
+  {
+    year: "2023",
+    title: "Rapid Growth",
+    description: "POS Percetakan expands to serve platforms across multiple industries and countries."
+  }
+];
+
+---
+
+<section class="py-20 bg-white">
+  <div class="container-custom">
+    <div class="text-center max-w-3xl mx-auto animate-on-scroll">
+      <h2 class="text-3xl md:text-4xl font-bold">
+        Our Story
+      </h2>
+    </div>
+
+    <div class="mt-12 max-w-4xl mx-auto">
+      <div class="relative">
+        {timeline.map((event, index) => (
+          <div class="relative pl-8 pb-12 animate-on-scroll" style={`animation-delay: ${index * 0.15}s`}>
+            <div class="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-payflo-purple to-payflo-blue"></div>
+            <div class="absolute left-[-4px] top-2 h-2 w-2 rounded-full bg-payflo-purple"></div>
+            <div class="text-sm font-semibold text-payflo-purple">{event.year}</div>
+            <h3 class="mt-2 text-xl font-semibold">{event.title}</h3>
+            <p class="mt-2 text-gray-600">{event.description}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-12 text-center">
+        <p class="text-xl font-medium text-gray-700">
+          From the team that brought you QuickBooks Payroll, Gusto, and Xero, we're building the
+          infrastructure we wish we had when we started out.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

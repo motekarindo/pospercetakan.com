@@ -51,6 +51,9 @@ export default defineConfig({
           "warehouse-duotone",
           "money-duotone",
           "money-wavy",
+          'linkedin-logo-duotone',
+          'twitter-logo-duotone',
+          'github-logo-duotone',
         ]
       }
     }),

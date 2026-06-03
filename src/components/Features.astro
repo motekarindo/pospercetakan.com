@@ -8,7 +8,6 @@ const features = [
     icon: 'ph:wallet-duotone',
     highlights: [
       'Aplikasi POS (Point of Sales) lengkap dan mudah digunakan.',
-      // 'Real-time Tracking Order yang bisa diakses oleh Klien.',
       'Buat Quotation dan Invoice otomatis dari Order masuk.',
       'Sistem pembayaran fleksibel. Tunai, Transfer atau QRIS dengan Metode Cicilan.',
     ],
@@ -24,6 +23,16 @@ const features = [
     ],
   },
   {
+    title: 'Manajemen Multi Store ',
+    description: 'Kelola multi cabang tanpa pusing dalam satu sistem aplikasi terpusat.',
+    icon: 'ph:globe-duotone',
+    highlights: [
+      'Rekap omzet harian otomatis',
+      'Produk terlaris per periode',
+      'Laporan siap export kapan saja',
+    ],
+  },
+  {
     title: 'Keuangan & Accounting',
     description: 'Pantau keuangan dan akuntansi otomatis, laporan akurat untuk keputusan bisnis cepat.',
     icon: 'ph:money-wavy',
@@ -34,13 +43,43 @@ const features = [
     ],
   },
   {
-    title: 'Manajemen Multi Store ',
-    description: 'Kelola multi cabang tanpa pusing dalam satu sistem aplikasi terpusat.',
+    title: 'Monitoring Produksi',
+    description: 'Pantau setiap order dari antrean desain, cetak, finishing, hingga siap dikirim atau diambil.',
     icon: 'ph:globe-duotone',
     highlights: [
-      'Rekap omzet harian otomatis',
-      'Produk terlaris per periode',
-      'Laporan siap export kapan saja',
+      'Real Time Tracking order yang bisa diakses oleh Pelanggan.',
+      'Status produksi terlihat jelas untuk admin, kasir, dan tim produksi.',
+      'Kurangi risiko order terlewat, tertukar, atau melewati deadline.',
+    ],
+  },
+  {
+    title: 'E-Procurement',
+    description: 'Kelola kebutuhan pembelian bahan dan perlengkapan produksi dari satu alur yang rapi.',
+    icon: 'ph:warehouse-duotone',
+    highlights: [
+      'Catat permintaan pembelian bahan berdasarkan kebutuhan order dan stok.',
+      'Pantau proses pengadaan dari pengajuan, persetujuan, hingga barang diterima.',
+      'Riwayat pembelian dan supplier tersimpan untuk kontrol biaya produksi.',
+    ],
+  },
+  {
+    title: 'HRIS',
+    description: 'Kelola data karyawan dan kebutuhan administrasi tim percetakan dalam satu sistem. Tahap pengembangan.',
+    icon: 'ph:users-duotone',
+    highlights: [
+      'Data karyawan, posisi, dan akses kerja tersusun lebih rapi.',
+      'Mendukung pengembangan absensi, jadwal kerja, dan payroll internal.',
+      'Disiapkan untuk membantu owner memantau produktivitas tim.',
+    ],
+  },
+  {
+    title: 'CRM',
+    description: 'Bangun hubungan yang lebih baik dengan pelanggan lewat histori order dan data customer yang tertata.',
+    icon: 'ph:handshake-duotone',
+    highlights: [
+      'Simpan data pelanggan retail, reseller, korporat, dan instansi.',
+      'Lihat histori pesanan untuk repeat order dan kebutuhan follow up.',
+      'Bantu tim menawarkan layanan yang lebih relevan berdasarkan kebiasaan pelanggan.',
     ],
   },
 
@@ -62,7 +101,8 @@ const features = [
       </p>
     </div>
 
-    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+    <!-- <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto"> -->
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
       {features.map((feature, index) => (
         <div class={`feature-card animate-on-scroll delay-${index + 2} group`}>
           <div class="h-12 w-12 rounded-lg bg-gradient-to-r from-payflo-purple to-payflo-blue flex items-center justify-center text-white mb-6 transition-transform duration-300 group-hover:scale-110">
