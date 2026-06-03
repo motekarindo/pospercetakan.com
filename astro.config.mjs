@@ -3,11 +3,14 @@ import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import icon from "astro-icon";
 
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://pospercetakan.com',
   output: 'static',
   prefetch: true,
+
   integrations: [
     tailwind(),
     sitemap(),
@@ -58,9 +61,12 @@ export default defineConfig({
       }
     }),
   ],
+
   image: {
     service: {
       entrypoint: 'astro/assets/services/sharp'
     }
-  }
+  },
+
+  adapter: cloudflare()
 });
